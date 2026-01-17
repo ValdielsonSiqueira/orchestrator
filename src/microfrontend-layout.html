@@ -1,0 +1,51 @@
+<single-spa-router>
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+  <!-- Example layouts you might find helpful:
+
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+
+  -->
+
+  <main>
+    <route path="/" exact>
+      <div style="display: flex; height: 100vh">
+        <div
+          style="
+            width: 250px;
+            flex-shrink: 0;
+            background-color: #f0f0f0;
+            border-right: 1px solid #ddd;
+          "
+        >
+          <application name="@FIAP/sidebar"></application>
+        </div>
+        <div style="flex-grow: 1">
+          <application name="@FIAP/dashboard"></application>
+        </div>
+      </div>
+    </route>
+
+    <route path="/account" exact>
+      <application name="@FIAP/account"></application>
+    </route>
+
+    <route path="/transaction">
+      <application name="@FIAP/transaction"></application>
+    </route>
+
+    <route default>
+      <application name="@FIAP/not-found"></application>
+    </route>
+  </main>
+</single-spa-router>
