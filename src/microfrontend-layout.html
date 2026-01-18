@@ -19,9 +19,12 @@
 
   <main>
     <route path="/dashboard" exact>
+      <application name="@FIAP/transaction-drawer"></application>
       <div style="display: flex; height: 100vh">
         <application name="@FIAP/sidebar"></application>
-        <application name="@FIAP/dashboard"></application>
+        <div style="flex: 1; width: 100%; position: relative">
+          <application name="@FIAP/dashboard"></application>
+        </div>
       </div>
     </route>
 
@@ -29,9 +32,9 @@
       <application name="@FIAP/account"></application>
     </route>
 
-    <route path="/transaction">
-      <application name="@FIAP/transaction"></application>
-    </route>
+    <!-- <route path="/transaction">
+      <application name="@FIAP/transaction-drawer"></application>
+    </route> -->
 
     <route path="/login">
       <application name="@FIAP/login"></application>
