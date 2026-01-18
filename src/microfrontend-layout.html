@@ -20,19 +20,8 @@
   <main>
     <route path="/dashboard" exact>
       <div style="display: flex; height: 100vh">
-        <div
-          style="
-            width: 250px;
-            flex-shrink: 0;
-            background-color: #f0f0f0;
-            border-right: 1px solid #ddd;
-          "
-        >
-          <application name="@FIAP/sidebar"></application>
-        </div>
-        <div style="flex-grow: 1">
-          <application name="@FIAP/dashboard"></application>
-        </div>
+        <application name="@FIAP/sidebar"></application>
+        <application name="@FIAP/dashboard"></application>
       </div>
     </route>
 
