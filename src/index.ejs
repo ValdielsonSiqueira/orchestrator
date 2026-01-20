@@ -35,24 +35,39 @@
 
       <% if (isLocal) { %>
         <script type="injector-importmap">
-    {
-      "imports": {
-        "@FIAP/root-config": "//localhost:9000/FIAP-root-config.js",
-        "@FIAP/account": "//localhost:8080/FIAP-account.js",
-        "@FIAP/not-found": "//localhost:8082/FIAP-not-found.js",
-        "@FIAP/dashboard": "//localhost:8083/FIAP-dashboard.js",
-        "@FIAP/transaction-drawer": "//localhost:8089/FIAP-transaction-drawer.js",
-        "@FIAP/util": "//localhost:8085/FIAP-util.js",
-        "@FIAP/sidebar": "//localhost:8087/FIAP-sidebar.js",
-        "@FIAP/login": "//localhost:8088/FIAP-login.js"
-      }
-    }
-  </script>
-        <% } %>
+          {
+            "imports": {
+              "@FIAP/root-config": "//localhost:9000/FIAP-root-config.js",
+              "@FIAP/account": "//localhost:8080/FIAP-account.js",
+              "@FIAP/not-found": "//localhost:8082/FIAP-not-found.js",
+              "@FIAP/transaction-drawer": "//localhost:8089/FIAP-transaction-drawer.js",
+              "@FIAP/dashboard": "//localhost:8083/FIAP-dashboard.js",
+              "@FIAP/util": "//localhost:8092/FIAP-util.js",
+              "@FIAP/sidebar": "//localhost:8087/FIAP-sidebar.js",
+              "@FIAP/login": "//localhost:8088/FIAP-login.js"
+            }
+          }
+        </script>
+        <% } else { %>
+          <script type="injector-importmap">
+          {
+            "imports": {
+              "@FIAP/root-config": "/FIAP-root-config.js",
+              "@FIAP/account": "https://[URL-DO-PROJECT-ACCOUNT].vercel.app/FIAP-account.js",
+              "@FIAP/dashboard": "https://[URL-DO-PROJECT-DASHBOARD].vercel.app/FIAP-dashboard.js",
+              "@FIAP/login": "https://[URL-DO-PROJECT-LOGIN].vercel.app/FIAP-login.js",
+              "@FIAP/not-found": "https://[URL-DO-PROJECT-NOT-FOUND].vercel.app/FIAP-not-found.js",
+              "@FIAP/sidebar": "https://[URL-DO-PROJECT-SIDEBAR].vercel.app/FIAP-sidebar.js",
+              "@FIAP/transaction-drawer": "https://[URL-DO-PROJECT-TRANSACTION-DRAWER].vercel.app/FIAP-transaction-drawer.js",
+              "@FIAP/util": "https://[URL-DO-PROJECT-UTIL].vercel.app/FIAP-util.js"
+            }
+          }
+        </script>
+          <% } %>
 
-          <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@5.1.1/dist/import-map-overrides.js"></script>
-          <script
-            src="https://cdn.jsdelivr.net/npm/@single-spa/import-map-injector@2.0.1/lib/import-map-injector.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@5.1.1/dist/import-map-overrides.js"></script>
+            <script
+              src="https://cdn.jsdelivr.net/npm/@single-spa/import-map-injector@2.0.1/lib/import-map-injector.js"></script>
 </head>
 
 <body>
